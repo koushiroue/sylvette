@@ -4,8 +4,10 @@
 
 ## Commands  
 
-- `hug` - Hugs.
--`flirt` - Flirts.
+- `hug` - Hugs.  
+- `flirt` - Flirts.
+
+## Packages  
 
 Discord.js packages in `package.json` :  
 
