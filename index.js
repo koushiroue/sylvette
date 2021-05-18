@@ -1,23 +1,23 @@
-//Main js file.
-//from anidiots.guide
+// Main js file.
+// from anidiots.guide
 console.log('Initializing...');
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require("fs");
 
-//config
+// config
 const { prefix } = require('./config.json');
-//const { token } = require('./config.json');
+// const { token } = require('./config.json');
 const config = require("./config.json");
 const message = require('./events/message');
 
-//token
+// Token
 require('dotenv').config();
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
 
-//cli prepping
+// cli prepping
 client.once('ready', () => {
 	console.log('Bot is now Active.');
 });
@@ -47,8 +47,8 @@ fs.readdir("./events/", (err, files) => {
 	console.log(`All Event Handler(s) loaded.`);
 });
 
-//initializing commands collection
-//and the reading the commands
+// Initializing commands collection
+// and the reading the commands
 client.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
@@ -70,13 +70,6 @@ fs.readdir("./commands/", (err, files) => {
 	console.log(`All Commands file(s) loaded.`);
 });
 
-//microcommands
-client.on('message', message => {
-	//handling arguments in commands
-	const args = message.content.slice(prefix.length).trim().split(/ +/g);
-	const command = args.shift().toLowerCase();
-});
-
 // Set the bot's presence (activity and status)
 client.on("ready", () => {
     client.user.setPresence({
@@ -89,6 +82,11 @@ client.on("ready", () => {
 	console.log(`Bot presence configured.`)
 })
 
-//auth
+// auth
 client.login(process.env.TOKEN);
 console.log('Token verified.');
+
+// error handling
+client.on('error', (e) => console.error(e));
+client.on('warn', (e) => console.warn(e));
+client.on('debug', (e) => console.info(e));
