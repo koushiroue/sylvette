@@ -5,7 +5,8 @@
 ## Commands  
 
 - `hug` - Hugs.  
-- `flirt` - Flirts.
+- `flirt` - Flirts.  
+- `reload` - Reloads the entire universe to bend on your will.  
 
 ## Packages  
 
