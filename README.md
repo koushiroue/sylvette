@@ -2,9 +2,13 @@
 
 ![anxiety](assets/github/main.png)  
 
-work in progress
+## Commands  
+
+- `hug` - Hugs.
+-`flirt` - Flirts.
 
 Discord.js packages in `package.json` :  
 
 - `discord.js` (obviously)  
-- `dotenv`
+- `dotenv` (bot token)
+- `snekfetch` (fetch https requests)

@@ -11,6 +11,8 @@ const { prefix } = require('./config.json');
 // const { token } = require('./config.json');
 const config = require("./config.json");
 const message = require('./events/message');
+// cooldown
+const talkedRecently = new Set();
 
 // Token
 require('dotenv').config();
@@ -82,11 +84,26 @@ client.on("ready", () => {
 	console.log(`Bot presence configured.`)
 })
 
-// auth
-client.login(process.env.TOKEN);
-console.log('Token verified.');
-
 // error handling
 client.on('error', (e) => console.error(e));
 client.on('warn', (e) => console.warn(e));
 client.on('debug', (e) => console.info(e));
+
+// microcommands
+client.on("message", (message) => {
+	if(responseObject[message.content]) {
+	  message.channel.send(responseObject[message.content]);
+	}
+  });
+
+//microreact commands
+  const responseObject = {
+	"ayy": "lmao.?",
+	"wat": "bruh",
+	"bruh": "bruh",
+	"lol": "cringe."
+  };
+
+// auth
+client.login(process.env.DISCORD_TOKEN);
+console.log('Token verified.');

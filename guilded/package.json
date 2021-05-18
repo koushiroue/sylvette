@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@guildedjs/guilded.js": "^1.0.6"
+  }
+}
