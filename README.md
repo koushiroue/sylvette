@@ -14,4 +14,4 @@ Discord.js packages in `package.json` :
 
 - `discord.js` (obviously)  
 - `dotenv` (bot token)
-- `snekfetch` (fetch https requests)
+- `snekfetch` (fetch https requests)(unused as of now)

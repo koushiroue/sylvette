@@ -106,4 +106,4 @@ client.on("message", (message) => {
 
 // auth
 client.login(process.env.DISCORD_TOKEN);
-console.log('Token verified.');
+console.log('Bot Token verified.');
